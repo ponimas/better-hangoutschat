@@ -8,7 +8,7 @@ function inject(){
        if (match != null) {
           var tmpdiv = document.createElement("div");
           var link = "https://"+match[1]+"/"+elt.getAttribute("data-topic-id");
-          link = link.replace("search/", "");
+          link = link.replace(/(\/u\/\d)|(search\/)/g, "");
           tmpdiv.innerHTML = '<p class="threadlink"><a href="'+link+'">Link:</a> '+link+'</p>';
           elt.insertBefore(tmpdiv.childNodes[0], elt.childNodes[0]);
        }
